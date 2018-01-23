@@ -1,0 +1,9 @@
+Step 1 : Download memcache DLL file from https://pecl.php.net/package/memcache/3.0.8/windows
+Step 2 : Copy dll file save into php ext folder
+Step 3 : Then enable memcache dll extension in php.ini file
+Step 4 : Download memcahce.exe file from https://commaster.net/content/installing-memcached-windows
+Step 5 : Open cmd prompt nav to memcahce.exe folder then execute following command
+memcached.exe -d install
+memcached.exe -d start
+memcached.exe -d stop
+telnet localhost 11211
