@@ -1,0 +1,50 @@
+Regular Expression Meta Characters
+---------------------------------
+
+Single Characters
+-----------------
+\d	=>	0 to 9
+\w	=>	[A-Za-z0-9] Any-alpha numeric characters
+\W	=>	Not Any-alpha numeric characters
+\s	=>	White spaces
+\S	=>	Not White spaces
+.	=>	Any characters
+
+
+Quantifier
+----------
+*			=>	0 or More
++			=>	1 or More
+?			=>	0 or 1
+{min, max}	=>	with minimum and maximum value
+{n}			=> 	n number of occurrence
+
+
+Position
+---------
+^	=>	Beginning
+$	=>	End
+\b	=>	Word boundary
+
+
+Character Classes
+-----------------
+[abc]	=>	Any one of these character inside bracket. 
+Simple Example
+--------------
+Mobile number = 044.9994537084
+Mobile number2 = 044-9994537084
+expression = /\d{3}[-.]\d{10}/
+
+lot of scenario  using "-" inside character class, find the following example.
+
+ 
+ex:1 = /[a-z]/ , it means any character available from small "a" to small "z".
+ex:2 = /[0-5]{3}, it means select numbers only from 0 to 5 with 3 occurrence.
+
+(-, ., ^) => These meta characters are used inside character classes,
+
+ex:3	=	/[^0-5]{3}, it means select numbers not 0 to 5 with 3 number of occurrence.
+
+\g is a global scope
+\i is a case in sensitive
