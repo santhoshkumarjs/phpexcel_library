@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>Sample</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="sample.js"></script>
+
+</head>
+<body ng-app="sample">
+
+	<header class="container">
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Logo Here</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<form class="navbar-form navbar-right">
+						<div class="form-group">
+							
+						</div>
+				  </form>
+				</div><!--/.navbar-collapse -->
+			  </div>
+			</nav>
+	</header>
+	<main class="container" ng-controller="samplecontroller">
+	<input type="text" placeholder="Search" class="form-control" ng-model="searchkeyword">
+	<div class="date" ng-repeat="(key, value) in datafield">
+	 <div class="ov" ng-repeat="(k,v) in value">
+	   {{k}}
+	   
+		<section class="col-md-8 col-md-offset-2" ng-repeat="(k1,v1) in v | filter: searchkeyword">
+		{{v1.name}}
+		
+			<div>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+				<p>
+			</div>
+			<div>
+				<p>Emp ID: GEN-4157<p>
+			</div>
+			<div>
+				<p>Company Name: Symbiotic Info tech Pvt Ltd<p>
+			</div>
+		</section>
+		</div>
+	</div>
+	</main>
+	<footer  class="container text-center">All rights resered</footer>
+</body>
+</html>
