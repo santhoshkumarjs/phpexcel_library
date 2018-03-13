@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Text</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="emailcontent">
+<input type="text" name="emaili[]" id="email"><span id="add_more">Add More</span>
+</div>
+</body>
+</html>
+<script>
+$(document).ready(function(){
+  
+  var inc = 1;
+  $("#add_more").on('click', function(){
+    var ano = '<input type="text" name="email[]" class="emailid"><span class="remove" id='+inc+'> Remove</span></br>';
+	$(this).closest("#emailcontent").find("#add_more").before(ano);
+	inc++;
+  });
+  
+  $(document).on('click','.remove',function(){
+	//$(this).closest("#emailcontent").find("input[type='text']").remove();
+	$(this).prev().remove();
+	$(this).remove();
+  });
+  
+});
+</script>
