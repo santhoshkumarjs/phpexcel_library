@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.9/angular-material.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+</head>
+
+<body ng-app='myApp' layout="column" layout-fill ng-controller="ChatCtrl as ctrl">
+  <!-- content starts here -->
+  <md-toolbar class="md-whiteframe-z2">
+    <div class="md-toolbar-tools">
+      <h2>
+          hello
+        </h2>
+    </div>
+  </md-toolbar>
+  <md-content scroll-to-bottom="ctrl.messages" layout="column" style="background-color: #F5F5F5;" ng-style="{'height':ctrl.messageWindowHeight}">
+      <div class="chat-box">
+        <ol class="discussion">
+          <li ng-repeat="message in ctrl.messages track by $index" id="msg-{{$index}}">
+            {{message}}
+          </li>
+        </ol>
+      </div>
+  </md-content>
+  <form name="userForm" novalidate ng-submit="ctrl.send()" layout="row" layout-padding layout-align="center center" class="message-box">
+    <div class="message" flex>
+      <md-input-container class="md-block">
+        <input type="text" name="text" ng-model="ctrl.user.text" />
+      </md-input-container>
+    </div>
+    <md-button class="md-icon-button" type="submit">
+      send
+    </md-button>
+  </form>
+
+  <!-- content ends here -->
+
+
+  <!-- Angular Material Dependencies -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.9/angular-material.js"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
